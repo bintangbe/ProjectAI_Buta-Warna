@@ -29,7 +29,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header aplikasi
-st.title("🎨 Deteksi Buta Warna - Tes Ishihara (Transfer Learning + Input Manual)")
+st.title("🎨 Deteksi Buta Warna - Tes Ishihara ")
 st.markdown("Upload gambar tes Ishihara, lalu sistem akan memprediksi angka secara otomatis dan Anda juga dapat memasukkan angka yang Anda lihat untuk dibandingkan.")
 
 # Upload gambar
@@ -51,8 +51,8 @@ if uploaded_file:
     # Prediksi Transfer Learning
     img_array = np.array(img)
     predicted_digit = predict_digit_transfer(img_array)
-    st.subheader("🤖 Prediksi Otomatis AI (Transfer Learning)")
-    st.write(f"📌 Model Memprediksi Angka: **{predicted_digit}**")
+    st.subheader("🤖 Prediksi Otomatis dari AI (Transfer Learning)")
+    st.write(f"📌 Prediksi Angka dari Model CNN: **{predicted_digit}**")
 
     # Input Manual
     st.subheader("✍️ Masukkan Angka yang Anda Lihat (Manual)")
@@ -108,7 +108,5 @@ if uploaded_file:
         href = f'<a href="data:application/octet-stream;base64,{b64}" download="hasil_diagnosa.pdf">📄 Unduh Hasil Diagnosa (PDF)</a>'
         st.markdown(href, unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown("<small>🛠️ Dibuat untuk Proyek AI - Ishihara Blind Test Cards</small>", unsafe_allow_html=True)
 
 
