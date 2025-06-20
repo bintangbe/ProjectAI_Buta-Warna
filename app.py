@@ -42,7 +42,7 @@ input_user = ""
 if uploaded_file:
     with st.expander("🖼️ Pratinjau Gambar", expanded=True):
         img = Image.open(uploaded_file).convert("RGB")
-        st.image(img, caption='Gambar yang Diunggah', use_column_width=True)
+        st.image(img, caption='Gambar yang Diunggah', use_container_width=True)
 
     # Ambil label dari nama file
     filename = uploaded_file.name
@@ -72,7 +72,7 @@ if uploaded_file:
     cb_type = st.selectbox("Pilih jenis buta warna yang ingin disimulasikan:", ["protanopia", "deuteranopia", "tritanopia"])
     img_resized = cv2.resize(img_array, (100, 100))
     simulated_img = simulate_colorblindness(img_resized, cb_type)
-    st.image(simulated_img, caption=f"Simulasi - {cb_type.capitalize()}", use_column_width=True)
+    st.image(simulated_img, caption=f"Simulasi - {cb_type.capitalize()}", use_container_width=True)
 
     # Tombol ekspor ke PDF
     if hasil_diagnosa:
